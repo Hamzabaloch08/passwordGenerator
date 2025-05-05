@@ -34,40 +34,41 @@ let App = () => {
   }, [length, numberAllowed, charecterAllowed, setPassword]);
 
   return (
-    <div className="flex justify-center flex-col items-center mt-14">
-      <div className="flex justify-center flex-col items-center bg-gray-700 w-[45%] p-5 rounded-2xl">
-        <h1 className="text-white text-2xl">Password Generator</h1>
-        <div className=" flex justify-center w-[100%] mt-5">
+    <div className="flex justify-center flex-col items-center mt-14 px-4">
+      <div className="flex justify-center flex-col items-center bg-gray-700 w-full max-w-xl p-5 rounded-2xl">
+        <h1 className="text-white text-2xl text-center">Password Generator</h1>
+
+        <div className="flex flex-col sm:flex-row w-full mt-5">
           <input
             type="text"
             value={password}
-            className="bg-white rounded-l-md w-[80%] py-2 px-3 outline-none"
+            className="bg-white rounded-t-md sm:rounded-tl-md sm:rounded-bl-md sm:rounded-tr-none sm:rounded-br-none w-full py-2 px-3 outline-none"
             placeholder="Your Password"
             readOnly
             ref={passwordRef}
           />
           <button
             onClick={copyPasswordToClipBoard}
-            className="text-white bg-blue-500 rounded-r-md p-2 cursor-pointer active:bg-blue-700"
+            className="text-white bg-blue-500 sm:rounded-tr-md sm:rounded-br-md rounded-b-md p-2 sm:ml-1 mt-2 sm:mt-0 cursor-pointer active:bg-blue-700"
           >
             Copy
           </button>
         </div>
 
-        <div className="flex gap-10 mt-5">
-          <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row sm:gap-10 gap-4 mt-5 w-full">
+          <div className="flex gap-2 items-center">
             <input
               type="range"
               min={8}
               max={30}
               value={length}
-              className="cursor-pointer text-white"
+              className="cursor-pointer w-full"
               onChange={(e) => setLength(e.target.value)}
             />
-            <label className="text-white">Length: {length} </label>
+            <label className="text-white whitespace-nowrap">Length: {length} </label>
           </div>
 
-          <div className="flex gap-1">
+          <div className="flex gap-1 items-center">
             <input
               type="checkbox"
               defaultChecked={numberAllowed}
@@ -75,18 +76,19 @@ let App = () => {
               onChange={() => setNumberAllowed((prev) => !prev)}
             />
             <label htmlFor="numberInput" className="text-white">
-              NumberAllow
+              Number Allow
             </label>
           </div>
-          <div className="flex gap-1">
+
+          <div className="flex gap-1 items-center">
             <input
               type="checkbox"
-              defaultChecked={numberAllowed}
+              defaultChecked={charecterAllowed}
               id="charecterInput"
               onChange={() => serCharecterAllowed((prev) => !prev)}
             />
             <label htmlFor="charecterInput" className="text-white">
-              charecter Allowed
+              Character Allowed
             </label>
           </div>
         </div>
