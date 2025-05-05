@@ -19,15 +19,18 @@ A simple and responsive password generator built with **React** and **Tailwind C
 ## 📦 Installation
 
 1. Clone the repository:
-   ```bash
+ ```bash
    git clone https://github.com/yourusername/passwordGenerator.git
-   cd password-generator
-    ```
+ ```
 
+```bash
+   cd password-generator
+```
+2. Install dependencies:
 ```bash
    npm install
 ```
-
+3. Run the development server:
 ```bash
   npm run dev
 ```
